@@ -1,0 +1,14 @@
+name: "."
+title: "Annika Leiby"
+description: |
+  Annika Leiby
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - text: "Annika!"
+      href: Annika.html
+output: distill::distill_article

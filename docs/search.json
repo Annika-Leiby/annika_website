@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "Some additional details about the website",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-01-24T20:14:55-08:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Annika Leiby",
+      "author": [],
+      "contents": "\n\n          \n      \n      Annika Leiby\n      \n      \n      Home\n      About\n      Annika!\n      ☰\n      \n      \n      \n        \n          \n            Annika Leiby\n          \n          \n            \n              I am a graduate student at the Bren School of Environmental Science and Management at the University of California Santa Barbara. At Bren, I am specializing in Water Resources and Data Science.\n            \n            \n              I am a graduate student at the Bren School of Environmental Science and Management at the University of California Santa Barbara. At Bren, I am specializing in Water Resources and Data Science.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
+      "last_modified": "2021-01-24T20:14:55-08:00"
+    }
+  ],
+  "collections": []
+}
