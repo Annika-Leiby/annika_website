@@ -1,0 +1,48 @@
+---
+name: Annika
+surname: Leiby
+position: "Graduate Student"
+address: "6540 El Colegio Rd. Goleta, CA 93117"
+phone: 240-678-3150
+www: https://annika-leiby.github.io/annika_website/
+email: "aleiby@bren.ucsb.edu"
+github: Annika Leiby
+linkedin: Annika Leiby
+output: vitae::moderncv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tinytex)
+```
+
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Master of Environmental Science and Management", "2019-Present", "University of California, Santa Barbara", "Santa Barbara, California",
+  "Bachelor of Arts Geology and Environmental Studies", "2014-2018", "Lafayette College", "Easton, Pennsylvania",
+  "Study Abroad", "Spring 2017", "Danish Institute of Study Abroad", "Copenhagen, Denmark"
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Water Experience
+
+```{r}
+tribble(
+  ~Year, ~Type, ~Desc,
+  1903, "Physics", "Awarded for her work on radioactivity with Pierre Curie and Henri Becquerel",
+  1911, "Chemistry", "Awarded for the discovery of radium and polonium"
+) %>% 
+  brief_entries(
+    glue::glue("Nobel Prize in {Type}"),
+    Year, 
+    Desc
+  )
+```
+
