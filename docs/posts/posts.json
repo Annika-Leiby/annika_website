@@ -1,0 +1,19 @@
+[
+  {
+    "path": "posts/2021-02-09-welcome/",
+    "title": "Welcome",
+    "description": "Hi and welcome to my blog! I am new to blogging so please bear with me but I am excited to share my projects with you.",
+    "author": [
+      {
+        "name": "Annika Leiby",
+        "url": {}
+      }
+    ],
+    "date": "2021-02-09",
+    "categories": [],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-02-09T08:42:41-08:00",
+    "input_file": {}
+  }
+]
