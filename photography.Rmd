@@ -1,0 +1,17 @@
+---
+title: "Photography"
+description: 
+  Some of my nature photography.
+---
+
+```{r echo = FALSE, message= FALSE}
+library(patchwork)
+
+knitr::include_graphics("rainbow.jpg")
+knitr::include_graphics("arch.jpg")
+knitr::include_graphics("moon.jpg")
+knitr::include_graphics("lizards.jpg")
+knitr::include_graphics("hawaii.jpg")
+knitr::include_graphics("orchid.jpg")
+
+```
