@@ -16,7 +16,7 @@ navbar:
     - text: "Photography"
       href: photography.html
     - text: "Resume"
-      href: resume.html
+      href: Resume.html
 
   
 output: distill::distill_article
