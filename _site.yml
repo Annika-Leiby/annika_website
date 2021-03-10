@@ -1,5 +1,6 @@
 name: "."
 title: "Annika Leiby"
+theme: "annika.css"
 description: 
   Annika Leiby
 output_dir: "docs"
