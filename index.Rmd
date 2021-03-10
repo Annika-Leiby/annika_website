@@ -7,7 +7,7 @@ links:
   - label: GitHub
     url: "https://github.com/Annika-Leiby"
   - label: Email
-    url: "aleiby@bren.ucsb.edu"
+    url: "mailto:annika.leiby@gmail.com"
 output:
   postcards::jolla
 site: distill::distill_website
