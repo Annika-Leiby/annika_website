@@ -1,0 +1,75 @@
+---
+title: "Tidy Tuesday"
+description: 
+author:
+  - name: Annika Leiby
+    url: {}
+date: 03-11-2021
+output:
+  distill::distill_article:
+    code_folding: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Attach tidyverse 
+
+library(tidyverse)
+library(tidytuesdayR)
+library(ggplot2)
+library(dplyr)
+library(plotly)
+library(viridis)
+library(janitor)
+library(viridis)
+library(wesanderson)
+library(forcats)
+library(here)
+
+
+```
+
+```{r}
+# Read in data 
+
+plastics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-01-26/plastics.csv') %>%
+  drop_na() %>%
+  clean_names() 
+  
+
+
+```
+
+```{r}
+#2020
+
+bar20 <- plastics %>%
+  select(country, year, grand_total, num_events, volunteers) %>%
+  filter(year == "2020") %>%
+  group_by(country) %>%
+  summarize(n = sum(grand_total)) %>%
+  slice_max(n, n = 9) %>%
+  mutate(country = fct_reorder(country, desc(n)))
+
+
+bar20$right <- cumsum(bar20$n) + 9*c(0:(nrow(bar20)-1))
+bar20$left <- bar20$right - bar20$n 
+
+bargraph <- ggplot(data = bar20, aes(ymin = 0)) +
+  geom_rect(position = "dodge", aes(xmin = left, xmax = right, ymax = n, color = country, fill = country)) + 
+  scale_x_discrete() +
+  ylab("Total Plastic Count (n)") +
+ labs(title = "Top Nine Countries with the Highest Total Plastic Counts (2020)") +
+  theme_light() +
+ scale_color_brewer(palette="YlOrRd", direction = -1) +
+ scale_fill_brewer(palette="YlOrRd", direction = -1) +
+scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
+
+
+bargraph
+```
+

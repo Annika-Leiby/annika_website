@@ -1,0 +1,141 @@
+---
+title: "Making a Choropleth"
+description: 
+author:
+  - name: Annika Leiby
+    url: {}
+date: 03-11-2021
+output:
+  distill::distill_article:
+    code_folding: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+```{r}
+# Attach Packages 
+library(tidyverse)
+library(here)
+library(janitor)
+library(sf)
+library(tmap)
+library(gstat)
+library(stars)
+library(dplyr)
+```
+
+### Data Source 
+
+California oil spill data comes from The Office of Spill Prevention and Response (OSPR) Incident Tracking Database and can be accessed from https://map.dfg.ca.gov/metadata/ds0394.html. 
+
+
+The California county shapefile comes from lab 6 (TIGER shapefile). 
+
+
+```{r}
+# Read in Oil Spills data
+# Rename specifclo column name to "Location" for a cleaner legend title on the interactive map later on 
+
+oil_spills <- read_sf(here("_posts", "2021-03-11-choropleth","oil_spills"), layer = "Oil_Spill_Incident_Tracking_%5Bds394%5D") %>% 
+  clean_names() %>%
+  rename(Location = specificlo)
+
+# Check the projection:
+st_crs(oil_spills) 
+
+# It is projected in WGS 84
+
+```
+
+```{r}
+# Read in the California County shapefile
+
+ca_counties <- read_sf(here("_posts", "2021-03-11-choropleth","ca_counties"), layer = "CA_Counties_TIGER2016") %>% 
+  clean_names() 
+
+# Check the projection
+st_crs(ca_counties)
+
+# It is also in WGS 84
+# Just to be sure they are in the same projection though you could use the transform function
+
+ca_counties <- st_transform(ca_counties, st_crs(oil_spills))
+
+```
+
+
+### Part 1: Make an exploratory interactive map in tmap showing the location of oil spill events included in the oil spills dataset. 
+
+```{r}
+# Make a quick ggplot to see what we're working with
+# Use geom_sf() function since they are shapefiles
+
+#ggplot() +
+#  geom_sf(data = ca_counties) +
+#  geom_sf(data = oil_spills)
+
+
+```
+
+```{r}
+# Make an interactive map to explore further atttributes of the oil spills dataset 
+# Use the tmap package and function tmap_mode() to set the mode to "view"
+# Set tm_shape to the oil spills dataset then set tm_dots to the attribute of interest
+# I am interested in whether the spill was located in a marine, land, or fresh water location so I set tm_dots to the column "specificlo"
+
+tmap_mode("view")
+
+tm_shape(ca_counties)+
+tm_polygons(aes(color = "lightgrey")) +
+tm_shape(oil_spills) +
+  tm_dots("Location") +
+  labs(caption = "California Oil Spill Locations and Location Type") +
+tmap_style("natural") 
+
+
+# From the interactive location map it looks like there are a lot of oil spills in the San Diego and San Francisco regions near the coast.
+
+
+```
+
+### Part 2 Finalized static chloropleth map where each county polygon is a different color based on total inland oil spills counts. 
+
+```{r}
+# Filter inland marine column to only include inland oil spills
+
+spills_inland <- oil_spills %>%
+  filter(inlandmari == "Inland") %>%
+  replace_na()
+
+# Use st_join function to join the oil spill and county data in order to then get a count of oil spills per county 
+# Group by the column "name" to group by county 
+# Use the summarize function to get counts of oil spills per county
+
+join <- ca_counties %>%
+  st_join(oil_spills) %>%
+  group_by(name) %>%
+  summarize(count = n())
+
+# Take a look at the df counts
+  
+```
+
+
+The five counties with the highest counts of inland oil spills are Los Angeles with 512, San Diego with 418, San Mateo with 205, Alameda with 188, and Contra Costa with 171. 
+
+
+```{r}
+# Make a chloropleth of California with the fill color of counties darker or lighter depending on the count of oil spills
+
+ggplot(data = join) +
+  geom_sf(aes(fill = count), color = "white", size = 0.5) +
+  scale_fill_gradientn(colors = c("lightgray", "orange", "red")) +
+  theme_dark() +
+  labs(x = "Longitude", y = "Latitude", title = "Number of Inland Oil Spills Per County")
+
+
+
+```
+
