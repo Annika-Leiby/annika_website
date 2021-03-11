@@ -9,6 +9,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
+```{r, out.width = "300px", fig.align = "center"}
+knitr::include_graphics("AnnikaLeiby.jpg")
+```
 
 
 ## Interests
@@ -21,11 +24,6 @@ At the Bren School I am specializing in water resources and getting a focus in d
 
 
 At Bren, I am also a Sustainable Water Market (SWM) fellow. As part of the program I participate in specialized classes and seminars related to water markets in the western United States. This past summer I held a part time internship with Clean Water Action in Baltimore, MD as well as a part time research position at the Bren school where I gathered international water level data.
-
-
-```{r, }
-knitr::include_graphics("AnnikaLeiby.jpg")
-```
 
 
 
