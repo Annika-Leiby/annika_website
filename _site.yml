@@ -12,8 +12,6 @@ navbar:
       href: about.html
     - text: "Blog"
       href: blog.html
-    - text: "Portfolio"
-      href: portfolio.html
     - text: "Photography"
       href: photography.html
     - text: "Resume"
