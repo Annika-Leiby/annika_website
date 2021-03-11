@@ -10,6 +10,8 @@ navbar:
       href: index.html
     - text: "About Me"
       href: about.html
+    - text: "Blog"
+      href: blog.html
     - text: "Portfolio"
       href: portfolio.html
     - text: "Photography"
