@@ -1,13 +1,6 @@
 ---
 title: "Portfolio"
-
+listing: posts
 ---
 
-```{r setup, echo=FALSE, message=FALSE}
 
-
-knitr::include_graphics("oil_spills_ca.jpg")
-
-```
-
-Map of Oil Spills by county in California. Data Source: The Office of Spill Prevention and Response (OSPR) Incident Tracking Database.

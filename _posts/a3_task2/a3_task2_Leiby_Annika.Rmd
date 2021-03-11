@@ -1,0 +1,104 @@
+---
+title: "Task 2"
+author: "Annika Leiby"
+date: "2/25/2021"
+output: 
+  html_document:
+    code_folding: hide
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+
+```{r}
+# Install package in console called rnaturalearth
+# Attach Packages 
+# Make sure to attach raster before the tidyverse
+
+library(raster) 
+library(tidyverse)
+library(here)
+library(sf)
+library(fasterize)
+library(rnaturalearth)
+library(dplyr)
+library(ggplot2)
+```
+
+
+### About Data: 
+
+AquaMaps (Kaschner, K., Rius-Barile, J., Kesner-Reyes, K., Garilao, C., Kullander, S., Rees, T., & Froese, R. (2016). AquaMaps: Predicted range maps for aquatic species. www.aquamaps.org), showing the probability of occurrence (based on relative environmental suitability, including species preferences for water temperature, depth, salinity, and distance to land) of 35 cetacean species that can be found in the California Bight. 
+
+### Part 1: Create a raster of species richness of cetacean species off the coast of California. 
+
+```{r}
+# Read in the tif files using the raster function 
+# Use the raster::stack() to avoid rasterizing each individual tif by using here function to point it to the ca_cetacean folder and using the pattern fucntion to indicate you want files with a ending of .tif
+
+
+cetacean_files <- list.files(path = here("ca_cetaceans"), pattern = '.tif', full.names = TRUE)
+
+cetacean_stack <- raster::stack(cetacean_files)
+
+# Aggregate by a factor of 3 to reduce the total number of cells and make it run faster 
+
+#cetacean <- raster::aggregate(cetacean_stack, fact = 3, fun = mean)
+```
+
+
+```{r}
+# Create a function where you set threshold value to .8 and use this to reclassify each probability layer to a "presence" layer of either 0 not present or 1 present
+
+cetacean_presence <- function(x, thresh = .8) {
+  y <- ifelse(x >= thresh, 1, 0)
+  return(y)
+}
+
+# Create a data frame using  the calc function and the function above to determine if the species is present or not at a given location
+
+presence_calc <- calc(cetacean_stack, fun = cetacean_presence)
+```
+
+
+```{r}
+# Use the calc function and the sum function to determine how many species are present in a given location or the cretacean species richness 
+
+cetacean_richness <- calc(presence_calc, fun = sum, na.rm = TRUE)
+
+```
+
+### Part 2: Create a static map using ggplot with your species richness raster and including a shapefile of the coastline for reference. 
+
+```{r}
+
+# Since ggplot likes dataframes and not so much rasters, convert the cetacean_richness raster to a dataframe
+
+cetacean_df <- raster::rasterToPoints(cetacean_richness) %>%
+  as.data.frame()
+
+# Use the rnaturalearth package to have a basemap of the california coast
+
+coastline <- ne_download(scale = "medium", type = "land", category = "physical", returnclass = "sf")
+
+# Plot a static map with ggplot 
+# Use the geom_sf() function to include the naturalearth coastline as a reference point
+# Use coord_sf() function to set the extent of the map to 125° W to 115°W and 32°N to 38°N since that is the geographic scope of the original cetacean raster.  
+
+ggplot() +
+  geom_raster() +
+  geom_raster(data = cetacean_df, aes(x=x, y=y, fill = layer)) +
+    geom_sf(data = coastline, fill = "burlywood3") +
+  coord_sf(expand = 0) +
+  coord_sf(xlim=c(-125, -115), ylim = c(32,38)) +
+  scale_fill_continuous(low = 'lightblue', high = 'darkblue', name = "Count") +
+  theme_minimal() +
+  labs(x = "Longitude", y = "Latitude", title = "Cetacean Diversity Richness Along The California Coast") 
+  
+
+```
+
+This map displays cetacean species richness along the California coast. The california coast is depicted in brown and the area covered in blue pixels represents the ocean. The pixel colors range from light blue if the location has low species richness to dark blue if the location has a high species richness. The areas with the most cetacean species richness are just off the coast and in the southern portion of the map near Los Angeles and San Diego. It is important to note that the threshold was set to .8 to determine a species presence. 
