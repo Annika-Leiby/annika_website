@@ -5,21 +5,21 @@
       "title": "About Me",
       "author": [],
       "contents": "\nInterests\nI first became interested in water resource issues from frequent visits to the Chesapeake Bay as a kid. I carried on this interest through my undergraduate education at Lafayette College where I studied Geology and Environmental Studies. I ultimately decided that I wanted to pursue a Masters degree so I packed my bags, moved across the country, and am now finishing up my degree at the Bren School at the University of Califorrnia, Santa Barbara.\nExperience\nAt the Bren School I am specializing in water resources and getting a focus in data science. My master’s project is for the CA Department of Water Resources and Environmental Defense Fund and my team is using geospatial modeling to find locations in Madera County, CA where multi benefit flood managed aquifer recharge projects can be implemented for the purpose of recharging gorundwater, enhancing ecosystems, and reducing flood risk.\nAt Bren, I am also a Sustainable Water Market (SWM) fellow. As part of the program I participate in specialized classes and seminars related to water markets in the western United States. This past summer I held a part time internship with Clean Water Action in Baltimore, MD as well as a part time research position at the Bren school where I gathered international water level data.\n\n\n\n\n\n\n",
-      "last_modified": "2021-03-10T21:51:39-08:00"
+      "last_modified": "2021-03-10T22:02:12-08:00"
     },
     {
       "path": "blog.html",
       "title": "Blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-03-10T21:57:52-08:00"
+      "last_modified": "2021-03-10T22:02:22-08:00"
     },
     {
       "path": "index.html",
       "title": "Annika Leiby",
       "author": [],
       "contents": "\n\n          \n          \n          Annika Leiby\n          \n          \n          Home\n          About Me\n          Blog\n          Photography\n          Resume\n          ☰\n          \n          \n      \n        \n          \n            Annika Leiby\n          \n          \n            \n              I am a graduate student at the Bren School of Environmental Science and Management at the University of California Santa Barbara. At Bren, I am specializing in Water Resources and Data Science.\n            \n            \n              I am a graduate student at the Bren School of Environmental Science and Management at the University of California Santa Barbara. At Bren, I am specializing in Water Resources and Data Science.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2021-03-10T21:51:39-08:00"
+      "last_modified": "2021-03-10T22:02:32-08:00"
     },
     {
       "path": "photography.html",
@@ -27,21 +27,21 @@
       "description": "Some of my nature photography.",
       "author": [],
       "contents": "\n\n\n\n\n\n\n",
-      "last_modified": "2021-03-10T21:51:41-08:00"
+      "last_modified": "2021-03-10T22:02:52-08:00"
     },
     {
       "path": "portfolio.html",
       "title": "Portfolio",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-03-10T21:51:41-08:00"
+      "last_modified": "2021-03-10T22:00:04-08:00"
     },
     {
       "path": "Resume.html",
       "title": "Resume",
       "author": [],
       "contents": "\n\n\n\n\n\n",
-      "last_modified": "2021-03-10T21:51:42-08:00"
+      "last_modified": "2021-03-10T22:03:05-08:00"
     }
   ],
   "collections": ["posts/posts.json"]
