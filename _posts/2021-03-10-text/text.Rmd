@@ -1,6 +1,6 @@
 ---
 title: "Working with Text"
-description: 
+description: This blog post will walk you through how I was able to take a pdf version of Harry Potter and the Sorcerers Stone and plot the top five words per chapter and perform a sentiment analysis showing whether each chapter has mostly negative or positive sentiments.
 author:
   - name: Annika Leiby
 date: 03-10-2021
@@ -105,7 +105,7 @@ harry_potter_tokens <- harry_potter_df %>%
 harry_potter_wordcount <- harry_potter_tokens %>%
   count(no, word)
 
-harry_potter_wordcount
+# harry_potter_wordcount
 
 # Remove the stop words like "a" "the"
 # use the function anti_join() to do this 

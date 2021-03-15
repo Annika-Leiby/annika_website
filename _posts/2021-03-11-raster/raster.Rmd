@@ -1,6 +1,6 @@
 ---
 title: "Working With Rasters"
-description: 
+description: This blog post details how I was able to create a raster stack from multiple raster files in order to obtain counts of species richness for cetacean species off the coast of California. A static plot of the species richness raster was then created using ggplot and a shapefile of the coastline was included for reference.
 author:
   - name: Annika Leiby
     url: {}

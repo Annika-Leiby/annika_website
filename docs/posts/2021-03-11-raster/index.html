@@ -87,6 +87,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
 <title>Annika Leiby: Working With Rasters</title>
 
+<meta property="description" itemprop="description" content="This blog post details how I was able to create a raster stack from multiple raster files in order to obtain counts of species richness for cetacean species off the coast of California. A static plot of the species richness raster was then created using ggplot and a shapefile of the coastline was included for reference."/>
 
 
 <!--  https://schema.org/Article -->
@@ -97,18 +98,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
 <meta property="og:title" content="Annika Leiby: Working With Rasters"/>
 <meta property="og:type" content="article"/>
+<meta property="og:description" content="This blog post details how I was able to create a raster stack from multiple raster files in order to obtain counts of species richness for cetacean species off the coast of California. A static plot of the species richness raster was then created using ggplot and a shapefile of the coastline was included for reference."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Annika Leiby"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
 <meta property="twitter:title" content="Annika Leiby: Working With Rasters"/>
+<meta property="twitter:description" content="This blog post details how I was able to create a raster stack from multiple raster files in order to obtain counts of species richness for cetacean species off the coast of California. A static plot of the species richness raster was then created using ggplot and a shapefile of the coastline was included for reference."/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Working With Rasters"]},{"type":"NULL"},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Annika Leiby"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["03-11-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[true]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Working With Rasters"]},{"type":"character","attributes":{},"value":["This blog post details how I was able to create a raster stack from multiple raster files in order to obtain counts of species richness for cetacean species off the coast of California. A static plot of the species richness raster was then created using ggplot and a shapefile of the coastline was included for reference."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Annika Leiby"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["03-11-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[true]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -2368,7 +2371,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Working With Rasters","authors":[{"author":"Annika Leiby","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-03-11T00:00:00.000+00:00","citationText":"Leiby, 2021"}
+{"title":"Working With Rasters","description":"This blog post details how I was able to create a raster stack from multiple raster files in order to obtain counts of species richness for cetacean species off the coast of California. A static plot of the species richness raster was then created using ggplot and a shapefile of the coastline was included for reference.","authors":[{"author":"Annika Leiby","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-03-11T00:00:00.000+00:00","citationText":"Leiby, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2397,7 +2400,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <h1>Working With Rasters</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p>This blog post details how I was able to create a raster stack from multiple raster files in order to obtain counts of species richness for cetacean species off the coast of California. A static plot of the species richness raster was then created using ggplot and a shapefile of the coastline was included for reference.</p>
 </div>
 
 <div class="d-byline">
@@ -2505,7 +2508,7 @@ Show code
 </div>
 </details>
 <pre><code>OGR data source with driver: ESRI Shapefile 
-Source: &quot;/private/var/folders/2v/mw8m60ns37v78m3k1d0wt2y40000gn/T/RtmpKKmZBW&quot;, layer: &quot;ne_50m_land&quot;
+Source: &quot;/private/var/folders/2v/mw8m60ns37v78m3k1d0wt2y40000gn/T/Rtmpi2DZAE&quot;, layer: &quot;ne_50m_land&quot;
 with 1420 features
 It has 3 fields
 Integer64 fields read as strings:  scalerank </code></pre>

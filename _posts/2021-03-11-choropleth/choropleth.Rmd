@@ -1,6 +1,6 @@
 ---
 title: "Making a Choropleth"
-description: 
+description: This blog post will demonstrate how I made an interactive tmap showing oil spills in California as well as a choropleth map showing the number of spills per county.
 author:
   - name: Annika Leiby
     url: {}
@@ -43,7 +43,7 @@ oil_spills <- read_sf(here("_posts", "2021-03-11-choropleth","oil_spills"), laye
   rename(Location = specificlo)
 
 # Check the projection:
-st_crs(oil_spills) 
+# st_crs(oil_spills) 
 
 # It is projected in WGS 84
 
@@ -56,7 +56,7 @@ ca_counties <- read_sf(here("_posts", "2021-03-11-choropleth","ca_counties"), la
   clean_names() 
 
 # Check the projection
-st_crs(ca_counties)
+# st_crs(ca_counties)
 
 # It is also in WGS 84
 # Just to be sure they are in the same projection though you could use the transform function

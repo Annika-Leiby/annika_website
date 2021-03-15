@@ -1,6 +1,6 @@
 ---
 title: "Tidy Tuesday"
-description: 
+description: This blog post shows code and a final visualization I made as a result of playing around with tidy tuesday data. 
 author:
   - name: Annika Leiby
     url: {}
