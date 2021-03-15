@@ -1,8 +1,9 @@
 ---
 title: "Working with Text"
-description: This blog post will walk you through how I was able to take a pdf version of Harry Potter and the Sorcerers Stone and plot the top five words per chapter and perform a sentiment analysis showing whether each chapter has mostly negative or positive sentiments.
+description: This blog post will walk you through how I was able to take a pdf version of Harry Potter and the Sorcerers Stone and plot the top five words per chapter and perform a sentiment analysis.
 author:
   - name: Annika Leiby
+    url: {}
 date: 03-10-2021
 output:
   distill::distill_article:
