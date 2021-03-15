@@ -1,10 +1,10 @@
 ---
-title: "Working with Text"
+title: "Text Analysis"
 description: This blog post will walk you through how I was able to take a pdf version of Harry Potter and the Sorcerers Stone and plot the top five words per chapter and perform a sentiment analysis.
 author:
   - name: Annika Leiby
     url: {}
-date: 03-10-2021
+date: 03-15-2021
 output:
   distill::distill_article:
     code_folding: true
@@ -145,6 +145,7 @@ ggplot(data = top_5_words, aes(x = word, y = n)) +
 
 ```
 
+
 ### Part 4: Perform a sentiment analysis using the NRC lexicon and make a visualization of the results.
 
 ```{r}
@@ -187,4 +188,3 @@ ggplot(data = afinn_means, aes(x = no, y = mean_afinn)) +
   labs(x = "Chapter", y = "Mean Afinn Value", title = "Mean Afinn Values by Chapter for Harry Potter and Sorcerers Stone")
 ```
 
-The mean afinn sentiment analysis indicates that all of the chapters except chapters five and thirteen have primarily negative sentiments. Chapters four and fifteen have the highest mean affinn values for sentiment with values between -0.8 and -1.0.
